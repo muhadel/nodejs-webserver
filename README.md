@@ -17,5 +17,5 @@ docker run -p 8080:8080 muhadel/nodejs-webserver:latest
 OR
 
 ```
-docker-compose up
+docker-compose up --build
 ```
