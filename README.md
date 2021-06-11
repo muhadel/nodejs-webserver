@@ -19,3 +19,10 @@ OR
 ```
 docker-compose up --build
 ```
+
+OR
+
+```
+docker pull muhadel/nodejs-webserver:latest
+docker run -p 8080:8080 muhadel/nodejs-webserver:latest
+```
