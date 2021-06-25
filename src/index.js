@@ -4,6 +4,17 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
+// Appdynamics APM
+require('appdynamics').profile({
+  controllerHostName: process.env.APPDYNAMICS_CONTROLLER_HOST,
+  controllerPort: process.env.APPDYNAMICS_CONTROLLER_PORT,
+  controllerSslEnabled: process.env.APPDYNAMICS_CONTROLLER_SSL_ENABLED,
+  accountName: process.env.APPDYNAMICS_ACCOUNT_NAME,
+  accountAccessKey: process.env.APPDYNAMICS_ACCOUNT_ACCESS_KEY,
+  applicationName: process.env.APPDYNAMICS_APP_NAME,
+  tierName: process.env.APPDYNAMICS_TIER_NAME,
+  nodeName: process.env.APPDYNAMICS_NODE_NAME,
+});
 // Constants
 const PORT = process.env.NODE_PORT || 8080;
 const HOST = process.env.NODE_HOST || '127.0.0.1';
