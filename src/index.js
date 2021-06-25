@@ -5,8 +5,8 @@ const cors = require('cors');
 require('dotenv').config();
 
 // Constants
-const PORT = process.env.PORT || 8080;
-const HOST = process.env.HOST || '127.0.0.1';
+const PORT = process.env.NODE_PORT || 8080;
+const HOST = process.env.NODE_HOST || '127.0.0.1';
 const ENV = process.env.NODE_ENV || 'development';
 const STATIC_PATH = __dirname + '/views/';
 // App
