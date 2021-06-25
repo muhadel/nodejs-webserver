@@ -19,8 +19,20 @@ app.get('/', (_, res) => {
   res.send('Hello World');
 });
 app.get('/health', (_, res) => {
+  function format(seconds) {
+    function pad(s) {
+      return (s < 10 ? '0' : '') + s;
+    }
+    var hours = Math.floor(seconds / (60 * 60));
+    var minutes = Math.floor((seconds % (60 * 60)) / 60);
+    var seconds = Math.floor(seconds % 60);
+
+    return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+  }
+  let uptime = process.uptime();
+
   res.status(200).json({
-    uptime: process.uptime(),
+    uptime: format(uptime),
     message: 'OK',
     timestamp: new Date().toISOString(),
     config: { env: ENV, host: HOST, port: PORT },
