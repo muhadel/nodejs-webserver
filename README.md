@@ -3,6 +3,7 @@
 Run the project locally:
 
 ```
+mv .env.example .env
 npm install
 npm start
 ```
